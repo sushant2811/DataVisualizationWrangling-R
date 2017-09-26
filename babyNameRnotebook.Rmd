@@ -107,7 +107,7 @@ df %>% filter(name %in% friends) %>%
 ```
 
 ```{r}
-df %>% filter(name %in% friends) %>% 
+plot <- df %>% filter(name %in% friends) %>% 
   ggplot(aes(x = year, y = n, color = name))+
   geom_line() + 
   facet_wrap(~sex)
@@ -115,5 +115,21 @@ df %>% filter(name %in% friends) %>%
 
 ```{r}
 friends
+```
+
+```{r}
+df %>% 
+  filter(name == " ")
+```
+```{r}
+plot
+ggsave("first_plot.png")
+```
+
+```{r}
+df %>% filter(name %in% friends) %>% 
+  ggplot(aes(x = year, y = n, color = name))+
+  geom_point() + 
+  facet_wrap(~sex)
 ```
 
