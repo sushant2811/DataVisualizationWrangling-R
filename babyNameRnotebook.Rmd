@@ -35,3 +35,12 @@ df <- babynames
 df
 ```
 
+```{r}
+df %>%
+  filter(name == "Sean"|name == "Bob"|name == "Betty") %>%
+  ggplot(aes(x = year, y = n, color = name)) +
+  geom_line()+
+  facet_grid(~sex)
+```
+
+
