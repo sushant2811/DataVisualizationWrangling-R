@@ -25,7 +25,10 @@ graphics.off()
 
 ```{r}
 # Load libraries
+
 library(babynames)
+# All individuals born between 1800 and 2015. Over 1 million rows. 
+
 library(tidyverse)
 library(cowplot)
 
@@ -36,11 +39,15 @@ df
 ```
 
 ```{r}
-df %>%
-  filter(name == "Sean"|name == "Bob"|name == "Betty") %>%
-  ggplot(aes(x = year, y = n, color = name)) +
-  geom_line()+
-  facet_grid(~sex)
+# Filter ------------------------------------------------------------------
+michael <- df %>%
+  filter(name == "Michael")
+
+michael
+```
+```{r}
+Mike <- df %>% 
+  filter(name == 'Mike')
 ```
 
 
