@@ -68,3 +68,52 @@ Mike %>%
   filter(sex == 'F')
 ```
 
+```{r}
+Sushant <- df %>% 
+  filter(name == 'Sushant')
+
+Swaroopa <- df %>% 
+  filter(name == 'Swaroopa')
+```
+
+```{r}
+sean <- df %>% 
+  filter(name == 'Sean')
+
+sean_plot <- sean %>% 
+  ggplot(aes)
+```
+
+```{r}
+df %>% 
+  filter (name == 'Sushant' | name == 'Aditi')
+```
+
+```{r}
+df %>% 
+  filter(name %in% c("Sushant", "Aditi"))
+
+# c stands for concantenta
+```
+```{r}
+# Even better way
+
+friends <- c("Sarah", "Hudson", "Chuck", "Christian")
+
+df %>% filter(name %in% friends) %>% 
+  ggplot(aes(x = year, y = n, color = name))+
+  geom_line()
+
+```
+
+```{r}
+df %>% filter(name %in% friends) %>% 
+  ggplot(aes(x = year, y = n, color = name))+
+  geom_line() + 
+  facet_wrap(~sex)
+```
+
+```{r}
+friends
+```
+
