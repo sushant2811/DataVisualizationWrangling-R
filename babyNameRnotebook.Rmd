@@ -51,3 +51,20 @@ Mike <- df %>%
 ```
 
 
+```{r}
+Mike %>% 
+  arrange(desc(year))
+```
+
+```{r}
+Mike %>%
+  ggplot(aes(x = year, y = n, color = sex))+
+  geom_line()
+```
+Apparently there were some women named Mike as well!
+
+```{r}
+Mike %>% 
+  filter(sex == 'F')
+```
+
